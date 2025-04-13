@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educa Dislexia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Educa Dislexia</h1>
+<p>Aprender no seu ritmo, com carinho e inclusão.</p>
+</header>
+
+<main>
+<section id="login-section">
+<h2>Login do Responsável</h2>
+<form id="loginForm">
+<input type="text" id="username" placeholder="Seu nome" required />
+<button type="submit">Entrar</button>
+</form>
+</section>
+
+<section id="activity-section" class="hidden">
+<h2>Atividade: Complete a palavra</h2>
+<p>Arraste a letra correta para completar a palavra: <strong>CA_ A</strong></p>
+<div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" id="drop-zone">_</div>
+<div class="letters">
+<div draggable="true" ondragstart="drag(event)" id="B" class="letter">B</div>
+<div draggable="true" ondragstart="drag(event)" id="S" class="letter">S</div>
+<div draggable="true" ondragstart="drag(event)" id="R" class="letter">R</div>
+</div>
+<button onclick="finalizarAtividade()">Finalizar Atividade</button>
+</section>
+
+<section id="progress-section" class="hidden">
+<h2>Progresso da Criança</h2>
+<p id="progressoTexto">Nenhuma atividade feita ainda.</p>
+<button onclick="voltarInicio()">Voltar</button>
+</section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
