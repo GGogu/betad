@@ -1,66 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beta App Educacional</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aprender Juntos</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="app-container">
-    <aside class="sidebar">
-      <h2>EducaKids</h2>
-      <nav>
-        <ul>
-          <li><button onclick="mostrarAba('inicio')">Início</button></li>
-          <li><button onclick="mostrarAba('atividades')">Atividades</button></li>
-          <li><button onclick="mostrarAba('questionarios')">Questionários</button></li>
-          <li><button onclick="mostrarAba('progresso')">Progresso</button></li>
-        </ul>
-      </nav>
-    </aside>
+  <header>
+    <h1>Aprender Juntos</h1>
+    <nav>
+      <button onclick="showSection('atividades')">Atividades</button>
+      <button onclick="showSection('questionario')">Questionário</button>
+      <button onclick="showSection('progresso')">Progresso</button>
+    </nav>
+  </header>
 
-    <main class="content">
-      <section id="inicio" class="aba ativa">
-        <h1>Bem-vindo ao EducaKids!</h1>
-        <p>Esse é um espaço seguro e divertido para ajudar no desenvolvimento da leitura das crianças.</p>
-      </section>
+  <main>
+    <section id="atividades" class="section active">
+      <h2>Atividades Interativas</h2>
+      <div class="cards">
+        <button onclick="responderAtividade(1)">Atividade 1 - Cores</button>
+        <button onclick="responderAtividade(2)">Atividade 2 - Formas</button>
+        <button onclick="responderAtividade(3)">Atividade 3 - Sons</button>
+        <button onclick="responderAtividade(4)">Atividade 4 - Números</button>
+        <button onclick="responderAtividade(5)">Atividade 5 - Emoções</button>
+        <button onclick="responderAtividade(6)">Atividade 6 - Memória</button>
+        <button onclick="responderAtividade(7)">Atividade 7 - Coordenação</button>
+        <button onclick="responderAtividade(8)">Atividade 8 - Raciocínio</button>
+        <button onclick="responderAtividade(9)">Atividade 9 - Atenção</button>
+        <button onclick="responderAtividade(10)">Atividade 10 - Palavras</button>
+      </div>
+    </section>
 
-      <section id="atividades" class="aba">
-        <h2>Atividades Interativas</h2>
-        <div class="atividade">
-          <p>Complete a palavra: _A__O</p>
-          <button onclick="registrarProgresso('Completar palavras')">CACHO</button>
-          <button>MASSA</button>
-        </div>
-        <div class="atividade">
-          <p>Escolha a imagem que representa a palavra: "GATO"</p>
-          <button onclick="registrarProgresso('Imagem-palavra')">🐱</button>
-          <button>🐶</button>
-        </div>
-      </section>
+    <section id="questionario" class="section">
+      <h2>Questionário para Responsáveis</h2>
+      <form id="form-questionario">
+        <label>Como está o comportamento da criança hoje?</label>
+        <input type="text" required />
+        <label>Você notou alguma dificuldade nas atividades?</label>
+        <input type="text" required />
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
 
-      <section id="questionarios" class="aba">
-        <h2>Questionário para Pais</h2>
-        <form onsubmit="event.preventDefault(); alert('Respostas enviadas com sucesso!');">
-          <label>Seu filho reconhece mais palavras do que antes?</label><br>
-          <input type="radio" name="q1"> Sim<br>
-          <input type="radio" name="q1"> Não<br><br>
+    <section id="progresso" class="section">
+      <h2>Progresso do Aluno</h2>
+      <div id="progresso-resultados">
+        <p>Aqui você verá os resultados das atividades realizadas.</p>
+      </div>
+    </section>
+  </main>
 
-          <label>Você percebeu mais interesse pelas atividades de leitura?</label><br>
-          <input type="radio" name="q2"> Sim<br>
-          <input type="radio" name="q2"> Não<br><br>
+  <footer>
+    <p>Desenvolvido para apoiar o aprendizado infantil com carinho 💙</p>
+  </footer>
 
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
-
-      <section id="progresso" class="aba">
-        <h2>Progresso</h2>
-        <ul id="lista-progresso"></ul>
-      </section>
-    </main>
-  </div>
   <script src="script.js"></script>
 </body>
 </html>

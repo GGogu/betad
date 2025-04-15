@@ -1,13 +1,18 @@
-function mostrarAba(id) {
-    const abas = document.querySelectorAll('.aba');
-    abas.forEach(aba => aba.classList.remove('ativa'));
-    document.getElementById(id).classList.add('ativa');
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
   }
   
-  function registrarProgresso(atividade) {
-    const lista = document.getElementById('lista-progresso');
-    const item = document.createElement('li');
-    item.textContent = `Atividade completada: ${atividade}`;
-    lista.appendChild(item);
+  function responderAtividade(numero) {
+    const resultado = document.getElementById('progresso-resultados');
+    const novaLinha = document.createElement('p');
+    novaLinha.textContent = `Atividade ${numero} realizada com sucesso!`;
+    resultado.appendChild(novaLinha);
+    alert(`Você completou a Atividade ${numero}!`);
   }
+  
+  document.getElementById('form-questionario').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Questionário enviado com sucesso!');
+  });
   
