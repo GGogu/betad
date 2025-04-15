@@ -3,58 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aprender Juntos</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Aprende+</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Aprender Juntos</h1>
+  <div class="container">
+    <h1>Aprende+</h1>
     <nav>
-      <button onclick="showSection('atividades')">Atividades</button>
-      <button onclick="showSection('questionario')">Questionário</button>
-      <button onclick="showSection('progresso')">Progresso</button>
+      <button onclick="mostrarAba('atividades')">Atividades</button>
+      <button onclick="mostrarAba('progresso')">Progresso</button>
+      <button onclick="mostrarAba('questionario')">Questionário</button>
     </nav>
-  </header>
 
-  <main>
-    <section id="atividades" class="section active">
-      <h2>Atividades Interativas</h2>
-      <div class="cards">
-        <button onclick="responderAtividade(1)">Atividade 1 - Cores</button>
-        <button onclick="responderAtividade(2)">Atividade 2 - Formas</button>
-        <button onclick="responderAtividade(3)">Atividade 3 - Sons</button>
-        <button onclick="responderAtividade(4)">Atividade 4 - Números</button>
-        <button onclick="responderAtividade(5)">Atividade 5 - Emoções</button>
-        <button onclick="responderAtividade(6)">Atividade 6 - Memória</button>
-        <button onclick="responderAtividade(7)">Atividade 7 - Coordenação</button>
-        <button onclick="responderAtividade(8)">Atividade 8 - Raciocínio</button>
-        <button onclick="responderAtividade(9)">Atividade 9 - Atenção</button>
-        <button onclick="responderAtividade(10)">Atividade 10 - Palavras</button>
-      </div>
-    </section>
+    <div id="atividades" class="aba">
+      <h2>Escolha uma Atividade</h2>
+      <div id="listaAtividades"></div>
+    </div>
 
-    <section id="questionario" class="section">
-      <h2>Questionário para Responsáveis</h2>
-      <form id="form-questionario">
-        <label>Como está o comportamento da criança hoje?</label>
-        <input type="text" required />
-        <label>Você notou alguma dificuldade nas atividades?</label>
-        <input type="text" required />
+    <div id="progresso" class="aba hidden">
+      <h2>Progresso da Criança</h2>
+      <div id="resultadoProgresso"></div>
+    </div>
+
+    <div id="questionario" class="aba hidden">
+      <h2>Questionário para o Responsável</h2>
+      <form id="formQuestionario">
+        <label>Você achou o app útil?<br>
+          <select name="gostou">
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
+          </select>
+        </label><br><br>
+        <label>De 0 a 10, qual nota você daria para essa versão?<br>
+          <input type="number" name="nota" min="0" max="10">
+        </label><br><br>
         <button type="submit">Enviar</button>
       </form>
-    </section>
-
-    <section id="progresso" class="section">
-      <h2>Progresso do Aluno</h2>
-      <div id="progresso-resultados">
-        <p>Aqui você verá os resultados das atividades realizadas.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Desenvolvido para apoiar o aprendizado infantil com carinho 💙</p>
-  </footer>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
