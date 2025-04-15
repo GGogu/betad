@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Educa Dislexia</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educa Dislexia - Protótipo Simplificado</title>
+  <!-- Fonte OpenDyslexic para melhor acessibilidade -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@latest/open-dyslexic.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-<h1>Educa Dislexia</h1>
-<p>Aprender no seu ritmo, com carinho e inclusão.</p>
-</header>
+  <header>
+    <h1>Educa Dislexia</h1>
+    <p>Plataforma de apoio para crianças com dislexia</p>
+  </header>
 
-<main>
-<section id="login-section">
-<h2>Login do Responsável</h2>
-<form id="loginForm">
-<input type="text" id="username" placeholder="Seu nome" required />
-<button type="submit">Entrar</button>
-</form>
-</section>
+  <main>
+    <!-- Tela de Boas-Vindas -->
+    <section id="welcome">
+      <h2>Bem-vindo(a)!</h2>
+      <p>Escolha como deseja acessar o sistema:</p>
+      <button id="btnAluno">Área do Aluno</button>
+      <button id="btnPais">Área dos Pais</button>
+    </section>
 
-<section id="activity-section" class="hidden">
-<h2>Atividade: Complete a palavra</h2>
-<p>Arraste a letra correta para completar a palavra: <strong>CA_ A</strong></p>
-<div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)" id="drop-zone">_</div>
-<div class="letters">
-<div draggable="true" ondragstart="drag(event)" id="B" class="letter">B</div>
-<div draggable="true" ondragstart="drag(event)" id="S" class="letter">S</div>
-<div draggable="true" ondragstart="drag(event)" id="R" class="letter">R</div>
-</div>
-<button onclick="finalizarAtividade()">Finalizar Atividade</button>
-</section>
+    <!-- Área do Aluno -->
+    <section id="aluno" class="hidden">
+      <h2>Área do Aluno</h2>
+      <p><strong>Exercício:</strong> Arraste as letras para formar a palavra <em>"CASA"</em>.</p>
+      <div class="exercise">
+        <div class="letters">
+          <div class="letter" draggable="true" data-letter="C">C</div>
+          <div class="letter" draggable="true" data-letter="A">A</div>
+          <div class="letter" draggable="true" data-letter="S">S</div>
+          <div class="letter" draggable="true" data-letter="A">A</div>
+        </div>
+        <div id="dropArea" class="drop-area">Solte as letras aqui</div>
+      </div>
+      <p id="feedback"></p>
+      <button id="backAluno">Voltar</button>
+    </section>
 
-<section id="progress-section" class="hidden">
-<h2>Progresso da Criança</h2>
-<p id="progressoTexto">Nenhuma atividade feita ainda.</p>
-<button onclick="voltarInicio()">Voltar</button>
-</section>
-</main>
+    <!-- Área dos Pais -->
+    <section id="pais" class="hidden">
+      <h2>Área dos Pais</h2>
+      <p>Acompanhe os resultados do aluno:</p>
+      <p>Palavras corretas: <span id="correctCount">0</span></p>
+      <p>Palavras incorretas: <span id="incorrectCount">0</span></p>
+      <button id="backPais">Voltar</button>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
