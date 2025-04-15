@@ -1,74 +1,66 @@
-/* Estilo básico para o protótipo */
-
-/* Aplicando a fonte OpenDyslexic */
-body {
-    font-family: "OpenDyslexic", Arial, sans-serif;
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    padding: 0;
+    font-family: Arial, sans-serif;
   }
   
-  header {
-    background-color: #2f558e;
+  body {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #4a90e2;
     color: white;
-    padding: 1rem;
-    text-align: center;
+    padding: 20px;
   }
   
-  main {
-    padding: 1rem;
+  .sidebar h2 {
+    margin-bottom: 20px;
   }
   
-  /* Estilo das seções */
-  section {
-    background-color: white;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 8px;
+  .sidebar ul {
+    list-style: none;
   }
   
-  /* Esconde as seções não ativas */
-  .hidden {
-    display: none;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    margin: 0.5rem;
-    background-color: #2f558e;
-    color: white;
+  .sidebar button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
     border: none;
-    border-radius: 4px;
+    background-color: #357ABD;
+    color: white;
     cursor: pointer;
   }
   
-  button:hover {
-    opacity: 0.9;
+  .sidebar button:hover {
+    background-color: #2d5f9e;
   }
   
-  /* Estilo para o exercício */
-  .exercise {
-    margin-top: 1rem;
+  .content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
   }
   
-  .letters {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  .aba {
+    display: none;
   }
   
-  .letter {
-    background-color: #2f558e;
-    color: white;
-    padding: 1rem;
-    border-radius: 4px;
-    cursor: grab;
+  .ativa {
+    display: block;
   }
   
-  .drop-area {
-    border: 2px dashed #aaa;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 4px;
+  .atividade {
+    margin-bottom: 20px;
+  }
+  
+  .atividade button {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
   }
   

@@ -3,53 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Educa Dislexia - Protótipo Simplificado</title>
-  <!-- Fonte OpenDyslexic para melhor acessibilidade -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/antijingoist/open-dyslexic@latest/open-dyslexic.css">
+  <title>Beta App Educacional</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Educa Dislexia</h1>
-    <p>Plataforma de apoio para crianças com dislexia</p>
-  </header>
+  <div class="app-container">
+    <aside class="sidebar">
+      <h2>EducaKids</h2>
+      <nav>
+        <ul>
+          <li><button onclick="mostrarAba('inicio')">Início</button></li>
+          <li><button onclick="mostrarAba('atividades')">Atividades</button></li>
+          <li><button onclick="mostrarAba('questionarios')">Questionários</button></li>
+          <li><button onclick="mostrarAba('progresso')">Progresso</button></li>
+        </ul>
+      </nav>
+    </aside>
 
-  <main>
-    <!-- Tela de Boas-Vindas -->
-    <section id="welcome">
-      <h2>Bem-vindo(a)!</h2>
-      <p>Escolha como deseja acessar o sistema:</p>
-      <button id="btnAluno">Área do Aluno</button>
-      <button id="btnPais">Área dos Pais</button>
-    </section>
+    <main class="content">
+      <section id="inicio" class="aba ativa">
+        <h1>Bem-vindo ao EducaKids!</h1>
+        <p>Esse é um espaço seguro e divertido para ajudar no desenvolvimento da leitura das crianças.</p>
+      </section>
 
-    <!-- Área do Aluno -->
-    <section id="aluno" class="hidden">
-      <h2>Área do Aluno</h2>
-      <p><strong>Exercício:</strong> Arraste as letras para formar a palavra <em>"CASA"</em>.</p>
-      <div class="exercise">
-        <div class="letters">
-          <div class="letter" draggable="true" data-letter="C">C</div>
-          <div class="letter" draggable="true" data-letter="A">A</div>
-          <div class="letter" draggable="true" data-letter="S">S</div>
-          <div class="letter" draggable="true" data-letter="A">A</div>
+      <section id="atividades" class="aba">
+        <h2>Atividades Interativas</h2>
+        <div class="atividade">
+          <p>Complete a palavra: _A__O</p>
+          <button onclick="registrarProgresso('Completar palavras')">CACHO</button>
+          <button>MASSA</button>
         </div>
-        <div id="dropArea" class="drop-area">Solte as letras aqui</div>
-      </div>
-      <p id="feedback"></p>
-      <button id="backAluno">Voltar</button>
-    </section>
+        <div class="atividade">
+          <p>Escolha a imagem que representa a palavra: "GATO"</p>
+          <button onclick="registrarProgresso('Imagem-palavra')">🐱</button>
+          <button>🐶</button>
+        </div>
+      </section>
 
-    <!-- Área dos Pais -->
-    <section id="pais" class="hidden">
-      <h2>Área dos Pais</h2>
-      <p>Acompanhe os resultados do aluno:</p>
-      <p>Palavras corretas: <span id="correctCount">0</span></p>
-      <p>Palavras incorretas: <span id="incorrectCount">0</span></p>
-      <button id="backPais">Voltar</button>
-    </section>
-  </main>
+      <section id="questionarios" class="aba">
+        <h2>Questionário para Pais</h2>
+        <form onsubmit="event.preventDefault(); alert('Respostas enviadas com sucesso!');">
+          <label>Seu filho reconhece mais palavras do que antes?</label><br>
+          <input type="radio" name="q1"> Sim<br>
+          <input type="radio" name="q1"> Não<br><br>
 
+          <label>Você percebeu mais interesse pelas atividades de leitura?</label><br>
+          <input type="radio" name="q2"> Sim<br>
+          <input type="radio" name="q2"> Não<br><br>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <section id="progresso" class="aba">
+        <h2>Progresso</h2>
+        <ul id="lista-progresso"></ul>
+      </section>
+    </main>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
